@@ -23,7 +23,7 @@ public class GoogleMapsTest {
     public void setup() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
 
-        String platform = System.getProperty("platform", "Android"); 
+        String platform = System.getProperty("platform", "Android");
 
         if (platform.equalsIgnoreCase("Android")) {
             caps.setCapability("platformName", "Android");
@@ -94,6 +94,7 @@ public class GoogleMapsTest {
 
         MobileElement destinationInputUmraniye = driver.findElement(By.id("com.google.android.apps.maps:id/search_omnibox_edit_text"));
         destinationInputUmraniye.sendKeys("ümraniye");
+        Thread.sleep(3000);
 
         MobileElement pressInput = driver.findElement(By.id("com.google.android.apps.maps:id/compass_container"));
         pressInput.click();
