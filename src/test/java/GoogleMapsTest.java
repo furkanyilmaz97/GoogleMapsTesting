@@ -23,8 +23,7 @@ public class GoogleMapsTest {
     public void setup() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
 
-        // Define a variable for platform or fetch it from an environment variable / external configuration
-        String platform = System.getProperty("platform", "Android"); // Default to Android if not specified
+        String platform = System.getProperty("platform", "Android"); 
 
         if (platform.equalsIgnoreCase("Android")) {
             caps.setCapability("platformName", "Android");
@@ -40,7 +39,7 @@ public class GoogleMapsTest {
             caps.setCapability("platformVersion", "15.0");
             caps.setCapability("deviceName", "iPhone 13");
             caps.setCapability("automationName", "XCUITest");
-            caps.setCapability("app", "com.apple.Maps"); 
+            caps.setCapability("app", "com.apple.Maps");
 
             driver = new IOSDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         } else {
